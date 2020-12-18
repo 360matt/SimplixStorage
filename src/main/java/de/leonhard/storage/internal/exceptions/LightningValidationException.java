@@ -7,15 +7,15 @@ import de.leonhard.storage.internal.exception.LightningException;
  */
 public class LightningValidationException extends LightningException {
 
-  private final long serialVersionUID = -7961367314553460325L;
+    private final long serialVersionUID = -7961367314553460325L;
 
-  public LightningValidationException(
-      final Throwable throwable,
-      final String... messages) {
-    super(throwable, messages);
-  }
+    public LightningValidationException(
+            final Throwable throwable,
+            final String... messages) {
+        super(throwable, messages);
+    }
 
-  public LightningValidationException(final String... messages) {
-    super(messages);
-  }
+    public LightningValidationException(final String... messages) {
+        super(messages);
+    }
 }
