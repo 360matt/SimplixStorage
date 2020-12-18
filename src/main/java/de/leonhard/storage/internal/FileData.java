@@ -2,7 +2,6 @@ package de.leonhard.storage.internal;
 
 import de.leonhard.storage.internal.settings.DataType;
 import de.leonhard.storage.util.JsonUtils;
-import lombok.val;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
@@ -239,8 +238,8 @@ public class FileData {
             if (entry.getValue() instanceof Map) {
                 for (final String tempKey : multiLayerKeySet(
                         (Map<String, Object>) entry.getValue())) {
-                            out.add(entry.getKey() + "." + tempKey);
-                        }
+                    out.add(entry.getKey() + "." + tempKey);
+                }
             } else {
                 out.add(entry.getKey());
             }
