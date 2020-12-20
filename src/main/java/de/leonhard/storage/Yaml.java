@@ -108,8 +108,7 @@ public class Yaml extends FlatFile {
         }
 
         try {
-            final Map<String, Object> data = new SimpleYamlReader(
-                    new InputStreamReader(inputStream, StandardCharsets.UTF_8)).readToMap();
+            final Map<String, Object> data = new SimpleYamlReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8)).readToMap();
 
             final FileData newData = new FileData(data, DataType.UNSORTED);
 
@@ -153,8 +152,11 @@ public class Yaml extends FlatFile {
 
     // Writing without comments
     private void write0(final FileData fileData) throws IOException {
-        @Cleanup final SimpleYamlWriter writer = new SimpleYamlWriter(this.file);
+
+        final SimpleYamlWriter writer = new SimpleYamlWriter(this.file);
         writer.write(fileData.toMap());
+        writer.close();
+
     }
 
     // ----------------------------------------------------------------------------------------------------

@@ -33,6 +33,13 @@ public class FileUtils {
     // Getting Files
     // ----------------------------------------------------------------------------------------------------
 
+    public static String replaceExtensions(@NonNull final String fileName) {
+        if (!fileName.contains(".")) {
+            return fileName;
+        }
+        return fileName.replace("." + getExtension(fileName), "");
+    }
+
     public List<File> listFiles(@NonNull final File folder) {
         return listFiles(folder, null);
     }
@@ -73,6 +80,10 @@ public class FileUtils {
         return getAndMake(new File(path, name));
     }
 
+    // ----------------------------------------------------------------------------------------------------
+    // Methods for handling the extension of files
+    // ----------------------------------------------------------------------------------------------------
+
     public File getAndMake(@NonNull final File file) {
         try {
             if (file.getParentFile() != null && !file.getParentFile().exists()) {
@@ -104,13 +115,6 @@ public class FileUtils {
 
     public String getExtension(@NonNull final File file) {
         return getExtension(file.getName());
-    }
-
-    public String replaceExtensions(@NonNull final String fileName) {
-        if (!fileName.contains(".")) {
-            return fileName;
-        }
-        return fileName.replace("." + getExtension(fileName), "");
     }
 
     public String getParentDirPath(@NonNull final File file) {

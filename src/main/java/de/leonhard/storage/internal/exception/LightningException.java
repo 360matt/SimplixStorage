@@ -24,8 +24,8 @@ public class LightningException extends RuntimeException {
 
     protected LightningException(
             @NonNull final Throwable cause,
-            @NonNull final boolean enableSuppression,
-            @NonNull final boolean writableStackTrace,
+            final boolean enableSuppression,
+            final boolean writableStackTrace,
             @NonNull final String... messages) {
         super(String.join("\n", messages), cause, enableSuppression, writableStackTrace);
     }

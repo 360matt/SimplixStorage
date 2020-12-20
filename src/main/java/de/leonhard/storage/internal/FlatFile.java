@@ -204,9 +204,9 @@ public abstract class FlatFile implements DataStorage, Comparable<FlatFile> {
 
     // For performance separated from get(String key)
     public final List<Object> getAll(final String... keys) {
-        final List<Object> result = new ArrayList<>();
         reloadIfNeeded();
 
+        final List<Object> result = new ArrayList<>();
         for (final String key : keys) {
             result.add(get(key));
         }
@@ -233,11 +233,9 @@ public abstract class FlatFile implements DataStorage, Comparable<FlatFile> {
         reloadIfNeeded();
 
         // Creating & setting defaults
-        for (final String key : newData.keySet()) {
-            if (!this.fileData.containsKey(key)) {
-                this.fileData.insert(key, newData.get(key));
-            }
-        }
+        for (final Map.Entry<String, Object> entry : newData.entrySet())
+            if (!this.fileData.containsKey(entry.getKey()))
+                this.fileData.insert(entry.getKey(), entry.getValue());
 
         write();
     }

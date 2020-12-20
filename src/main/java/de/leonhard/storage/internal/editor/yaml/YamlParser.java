@@ -1,7 +1,6 @@
 package de.leonhard.storage.internal.editor.yaml;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 import java.util.*;
 
@@ -19,7 +18,7 @@ public final class YamlParser {
         final Map<String, List<String>> parsed = assignCommentsToKey(comments);
 
         for (final String line : updated) {
-            val rawList = getKeyAndRemove(line, parsed);
+            List<String> rawList = getKeyAndRemove(line, parsed);
             if (rawList == null || rawList.isEmpty()) {
 
                 out.add(line);

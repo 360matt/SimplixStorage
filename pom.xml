@@ -2,8 +2,17 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <artifactId>simplixstorage</artifactId>
+    <groupId>com.github.javafactorydev</groupId>
     <version>3.2.1</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
 
     <build>
         <defaultGoal>clean verify -U</defaultGoal>
@@ -138,7 +147,7 @@
             <artifactId>yamlbeans</artifactId>
             <groupId>com.esotericsoftware.yamlbeans</groupId>
             <scope>compile</scope>
-            <version>1.13</version>
+            <version>1.15</version>
         </dependency>
 
         <!-- Lombok -->
@@ -146,14 +155,14 @@
             <artifactId>lombok</artifactId>
             <groupId>org.projectlombok</groupId>
             <scope>provided</scope>
-            <version>1.18.10</version>
+            <version>1.18.16</version>
         </dependency>
 
         <!-- JetBrains Annotations -->
         <dependency>
             <artifactId>annotations</artifactId>
             <groupId>org.jetbrains</groupId>
-            <version>18.0.0</version>
+            <version>20.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -197,7 +206,7 @@
             <url>https://github.com/Zeanon</url>
         </developer>
     </developers>
-    <groupId>com.github.javafactorydev</groupId>
+
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -209,28 +218,19 @@
 
     <name>LightningStorage</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
     <repositories>
         <repository>
             <id>yamlbeans</id>
             <url>https://mvnrepository.com/artifact/com.esotericsoftware.yamlbeans/yamlbeans</url>
         </repository>
-
-        <repository>
-            <id>json</id>
-            <url>https://mvnrepository.com/artifact/org.json/json</url>
-        </repository>
     </repositories>
 
     <scm>
-        <connection>scm:git:git://github.com/JavaFactoryDev/LightningStorage.git</connection>
-        <developerConnection>scm:git:ssh://github.com/JavaFactoryDev/LightningStorage.git
+        <connection>scm:git:git://github.com/360matt/SimplixStorage.git</connection>
+        <developerConnection>scm:git:ssh://github.com/360matt/SimplixStorage.git
         </developerConnection>
-        <url>//github.com/JavaFactoryDev/LightningStorage</url>
+        <url>//github.com/360matt/SimplixStorage</url>
     </scm>
 
-    <url>https://github.com/JavaFactoryDev/LightningStorage</url>
+    <url>https://github.com/360matt/SimplixStorage</url>
 </project>
